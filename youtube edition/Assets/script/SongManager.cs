@@ -35,37 +35,12 @@ public class SongManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
-        {
-            StartCoroutine(ReadFromWebsite());
-        }
-        else
-        {
-            ReadFromFile();
-        }
+        
+        ReadFromFile();
+        
     }
 
-    private IEnumerator ReadFromWebsite()
-    {
-        using (UnityWebRequest www = UnityWebRequest.Get(Application.streamingAssetsPath + "/" + fileLocation))
-        {
-            yield return www.SendWebRequest();
-
-            if (www.isNetworkError || www.isHttpError)
-            {
-                Debug.LogError(www.error);
-            }
-            else
-            {
-                byte[] results = www.downloadHandler.data;
-                using (var stream = new MemoryStream(results))
-                {
-                    midiFile = MidiFile.Read(stream);
-                    GetDataFromMidi();
-                }
-            }
-        }
-    }
+  
 
     private void ReadFromFile()
     {
