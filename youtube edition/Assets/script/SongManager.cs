@@ -4,7 +4,6 @@ using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using System.IO;
-using UnityEngine.Networking;
 using System;
 
 public class SongManager : MonoBehaviour
@@ -35,12 +34,10 @@ public class SongManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        
+
         ReadFromFile();
         
     }
-
-  
 
     private void ReadFromFile()
     {
@@ -55,7 +52,7 @@ public class SongManager : MonoBehaviour
 
         foreach (var lane in lanes) lane.SetTimeStamps(array);
 
-        Invoke(nameof(StartSong), songDelayInSeconds);
+        Invoke(nameof(StartSong), songDelayInSeconds );
     }
     public void StartSong()
     {

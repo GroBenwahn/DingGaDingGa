@@ -16,13 +16,13 @@ public class ScoreManager : MonoBehaviour
     }
     public static void Hit()
     {
-        comboScore += 1;
         Instance.hitSFX.Play();
+        comboScore += 1;
     }
     public static void Miss()
     {
-        comboScore = 0;
         Instance.missSFX.Play();
+        comboScore = 0;
     }
     private void Update()
     {

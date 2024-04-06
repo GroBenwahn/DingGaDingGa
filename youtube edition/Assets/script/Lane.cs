@@ -34,6 +34,7 @@ public class Lane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if (spawnIndex < timeStamps.Count)
         {
             if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTime)
@@ -44,12 +45,12 @@ public class Lane : MonoBehaviour
                 spawnIndex++;
             }
         }
-
+        
         if (inputIndex < timeStamps.Count)
         {
             double timeStamp = timeStamps[inputIndex];
             double marginOfError = SongManager.Instance.marginOfError;
-            double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0);
+            double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0)+0.1;
 
             if (Input.GetKeyDown(input))
             {
