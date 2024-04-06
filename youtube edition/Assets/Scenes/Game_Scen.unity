@@ -589,9 +589,9 @@ MonoBehaviour:
   - {fileID: 1745680114}
   - {fileID: 813003047}
   songDelayInSeconds: 0
-  marginOfError: 0.07
+  marginOfError: 0.1
   inputDelayInMilliseconds: 0
-  fileLocation: TEST3.mid
+  fileLocation: TEST.mid
   noteTime: 1
   noteSpawnY: 7
   noteTapY: -7
