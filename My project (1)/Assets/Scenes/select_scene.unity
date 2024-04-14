@@ -1127,6 +1127,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843256379}
   m_CullTransparentMesh: 1
+--- !u!1 &906481164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 906481166}
+  - component: {fileID: 906481165}
+  m_Layer: 0
+  m_Name: Gameplay/s
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &906481165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906481164}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21193e47f97332943b71a666be0b4032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  midi: {fileID: 0}
+  playset: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioClips: []
+--- !u!4 &906481166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906481164}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &917886619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,7 +2946,7 @@ GameObject:
   - component: {fileID: 1430765074}
   - component: {fileID: 1430765073}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: midiCD&Sound/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2916,7 +2964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6b8bae63e955d40bd5429a9569bf1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedClipIndex: 0
+  selectedClipIndex: 1
 --- !u!114 &1430765074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2929,7 +2977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26338baf4289b69429b365e261b0bc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamePlay: {fileID: 0}
+  gamePlay: {fileID: 906481165}
 --- !u!4 &1430765075
 Transform:
   m_ObjectHideFlags: 0
@@ -4348,7 +4396,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TEST2.mid
+          m_StringArgument: Track 2.mid
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1430765073}
@@ -4639,6 +4687,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 241817298}
+  - {fileID: 906481166}
   - {fileID: 1430765075}
   - {fileID: 839301489}
   - {fileID: 1306549768}
