@@ -28,6 +28,6 @@ public class Sound : MonoBehaviour
     public void SetClipIndex(int clipIndex)
     {
         selectedClipIndex = clipIndex; // 선택된 AudioClip의 인덱스를 저장합니다.
-        Debug.Log(selectedClipIndex);
+        Debug.Log("sound"+selectedClipIndex);
     }
 }
