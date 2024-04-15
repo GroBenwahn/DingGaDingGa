@@ -7,6 +7,7 @@ public class Playset : MonoBehaviour
     public Lane[] lanes;
     public float songDelayInSeconds;
     public double marginOfError;
+    public double goodLine;
     public int inputDelayInMilliseconds;
     public float noteTime;
     public float noteSpawnY;

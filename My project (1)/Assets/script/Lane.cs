@@ -53,6 +53,7 @@ public class Lane : MonoBehaviour
         {
             double timeStamp = timeStamps[inputIndex];
             double marginOfError = GamePlay.Instance.playset.marginOfError;
+            double goodLine = GamePlay.Instance.playset.goodLine;
             double audioTime = GamePlay.GetAudioSourceTime() - (GamePlay.Instance.playset.inputDelayInMilliseconds / 1000.0) + 0.1;
 
             if (Input.GetKeyDown(input))
@@ -60,16 +61,25 @@ public class Lane : MonoBehaviour
                 if (Math.Abs(audioTime - timeStamp) < marginOfError)
                 {
                     Hit();
-                    print($"Hit on {inputIndex} note");
+                    print($"Perpect on {inputIndex} note");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
                 }
+                
+                else if (Math.Abs(audioTime - timeStamp) < goodLine)
+                {
+                    Hit();
+                    print($"Good on {inputIndex} note");
+                    Destroy(notes[inputIndex].gameObject);
+                    inputIndex++;
+                }
+                
                 else
                 {
                     print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
                 }
             }
-            if (timeStamp + marginOfError <= audioTime)
+            if (timeStamp + goodLine <= audioTime)
             {
                 Miss();
                 print($"Missed {inputIndex} note");

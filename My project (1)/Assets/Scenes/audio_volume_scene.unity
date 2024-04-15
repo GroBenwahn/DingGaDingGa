@@ -485,6 +485,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 830639385}
     m_Modifications:
     - target: {fileID: 1123473938456792774, guid: 606d770ef648a554face4e440ed23f26, type: 3}
+      propertyPath: m_Value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123473938456792774, guid: 606d770ef648a554face4e440ed23f26, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123473938456792774, guid: 606d770ef648a554face4e440ed23f26, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -531,6 +539,14 @@ PrefabInstance:
     - target: {fileID: 1918175827051099195, guid: 606d770ef648a554face4e440ed23f26, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949617574859892100, guid: 606d770ef648a554face4e440ed23f26, type: 3}
+      propertyPath: m_Value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949617574859892100, guid: 606d770ef648a554face4e440ed23f26, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 1949617574859892100, guid: 606d770ef648a554face4e440ed23f26, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -1453,6 +1469,9 @@ MonoBehaviour:
   soundEffectsSlider: {fileID: 636022918}
   gameaudio: []
   soundEffectsAudio: []
+  mixer: {fileID: 24100000, guid: 1b14b4d64b189f04bb52cae194765805, type: 2}
+  musicSlider: {fileID: 492838270}
+  sfxSlider: {fileID: 636022918}
 --- !u!4 &1774652111
 Transform:
   m_ObjectHideFlags: 0

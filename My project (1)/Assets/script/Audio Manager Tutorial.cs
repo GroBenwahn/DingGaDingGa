@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManagerTutorial : MonoBehaviour
 {
@@ -8,17 +9,38 @@ public class AudioManagerTutorial : MonoBehaviour
     private static readonly string SoundEffectsPref = "SoundEffectsPref";
     private int firstPlayInt;
     public Slider gameaudioSlider, soundEffectsSlider;
-    private float gameaudioFloat, soundEffectsFloat;
+    private float gameaudioFloat, soundEffectsFloat, mixervolFloat ;
     public AudioSource[] gameaudio;
     public AudioSource[] soundEffectsAudio;
+    [SerializeField] AudioMixer mixer;
+    [SerializeField] Slider musicSlider;
+    //[SerializeField] Slider sfxSlider;
 
+    const string MIXER_MUSIC = "BGM";
+    //const string MIXER_SFX = "SFX";
+
+    void Awake() 
+    {
+        gameaudioSlider.onValueChanged.AddListener(SetMusicVolume);
+        gameaudioSlider.value = PlayerPrefs.GetFloat(MIXER_MUSIC);
+    }
+
+    void SetMusicVolume(float value) 
+    {
+        mixer.SetFloat(MIXER_MUSIC, Mathf.Log10(value) * 20);
+        PlayerPrefs.SetFloat(MIXER_MUSIC, value);
+    }
+
+    
 
     void Start()
     {
+        
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
 
         if (firstPlayInt == 0) 
         {
+            
             gameaudioFloat = .25f;
             soundEffectsFloat = .75f;
             gameaudioSlider.value = gameaudioFloat;
