@@ -18,7 +18,7 @@ public class AudioSetteingtutorial : MonoBehaviour
     void Awake()
     {
         ContinueSettings();
-        musicSlider.value = PlayerPrefs.GetFloat(MIXER_MUSIC);
+        //musicSlider.value = PlayerPrefs.GetFloat(MIXER_MUSIC);
     }
 
     private void ContinueSettings() 
