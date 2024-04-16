@@ -19,9 +19,10 @@ public class AudioManagerTutorial : MonoBehaviour
 
     void Awake() 
     {
-        SetMusicVolume(gameaudioSlider.value);
+        gameaudioSlider.onValueChanged.AddListener(SetMusicVolume);
         gameaudioSlider.value = PlayerPrefs.GetFloat(MIXER_MUSIC);
-        
+        SetMusicVolume(gameaudioSlider.value);
+
     }
 
     void SetMusicVolume(float value) 
@@ -73,9 +74,11 @@ public class AudioManagerTutorial : MonoBehaviour
 
     public void UpdateSound() 
     {
+        SetMusicVolume(gameaudioSlider.value);
         for (int a = 0; a < gameaudio.Length; a++)
         {
             gameaudio[a].volume = gameaudioSlider.value;
+            Debug.Log(gameaudioSlider.value);
         }
         for (int i = 0; i < soundEffectsAudio.Length; i++) 
         {
