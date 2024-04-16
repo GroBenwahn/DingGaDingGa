@@ -1372,6 +1372,7 @@ MonoBehaviour:
   - {fileID: 1211053467}
   - {fileID: 1007239549}
   mixer: {fileID: 24100000, guid: 1b14b4d64b189f04bb52cae194765805, type: 2}
+  musicSlider: {fileID: 1185092923}
 --- !u!114 &1027201125
 MonoBehaviour:
   m_ObjectHideFlags: 0

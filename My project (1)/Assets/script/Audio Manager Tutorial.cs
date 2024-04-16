@@ -14,15 +14,14 @@ public class AudioManagerTutorial : MonoBehaviour
     public AudioSource[] soundEffectsAudio;
     [SerializeField] AudioMixer mixer;
     [SerializeField] Slider musicSlider;
-    //[SerializeField] Slider sfxSlider;
 
     const string MIXER_MUSIC = "BGM";
-    //const string MIXER_SFX = "SFX";
 
     void Awake() 
     {
-        gameaudioSlider.onValueChanged.AddListener(SetMusicVolume);
+        SetMusicVolume(gameaudioSlider.value);
         gameaudioSlider.value = PlayerPrefs.GetFloat(MIXER_MUSIC);
+        
     }
 
     void SetMusicVolume(float value) 

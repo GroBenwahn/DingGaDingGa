@@ -10,10 +10,15 @@ public class AudioSetteingtutorial : MonoBehaviour
     private float gameaudioFloat, soundEffectsFloat;
     public AudioSource[] gameaudio;
     public AudioSource[] soundEffectsAudio;
+    [SerializeField] AudioMixer mixer;
+    [SerializeField] Slider musicSlider;
+
+    const string MIXER_MUSIC = "BGM";
 
     void Awake()
     {
         ContinueSettings();
+        musicSlider.value = PlayerPrefs.GetFloat(MIXER_MUSIC);
     }
 
     private void ContinueSettings() 
