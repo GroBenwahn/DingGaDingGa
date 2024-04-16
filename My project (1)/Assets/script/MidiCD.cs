@@ -14,17 +14,7 @@ public class MidiCD : MonoBehaviour
 
     void Start()
     {
-        /*
-         gamePlay = FindObjectOfType<GamePlay>(); // gamePlay 변수에 참조 할당
-        if (gamePlay != null)
-        {
-            ReadFromFileAndSendData();
-        }
-        else
-        {
-            Debug.LogWarning("GamePlay reference is null. Data transmission failed.");
-        }
-       */
+
     }
 
 
@@ -49,18 +39,6 @@ public class MidiCD : MonoBehaviour
             midiFile = MidiFile.Read(filePath);
             Debug.Log("ReadFromFileAndSendData파일을 불러옴");
 
-            // 데이터 전송
-            /*
-             if (gamePlay != null)
-            {
-                // gamePlay에서 GetDataFromMidi 호출
-                gamePlay.GetDataFromMidi(midiFile);
-            }
-            else
-            {
-                Debug.LogWarning("GamePlay reference is null. Data transmission failed.");
-            }
-            */
         }
             
         catch (IOException e)

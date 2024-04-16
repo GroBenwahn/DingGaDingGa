@@ -8,14 +8,14 @@ using Melanchall.DryWetMidi.Interaction;
 
 
 public class GamePlay : MonoBehaviour
-{  
+{
+    public Sound soundScript;
     public MidiCD midi; 
     public Playset playset;
     public static GamePlay Instance;
-    //public static MidiFile midiFile;
     public AudioSource audioSource;
     public AudioClip[] audioClips;
-    //public int playerData;
+
 
     void Start()
     {
@@ -26,16 +26,13 @@ public class GamePlay : MonoBehaviour
        
         int selectedClipIndex = FindObjectOfType<Sound>().selectedClipIndex;
         audioSource.clip = audioClips[selectedClipIndex];
-        /*
-        if (selectedClipIndex >= 0 && selectedClipIndex < audioClips.Length)
-        {
-            audioSource.clip = audioClips[selectedClipIndex];
-        }
-        */
-        Debug.Log("gamep" + selectedClipIndex);
-        Debug.Log("Length" + audioClips.Length); 
+        Debug.Log("ClipIndex" + selectedClipIndex);
         Debug.Log("sound 클립  작동중");
-       
+
+        float selectedSpeed = FindObjectOfType<Sound>().selectedSpeed;
+        audioSource.pitch = selectedSpeed;
+        Debug.Log("sound speed " + selectedSpeed);
+
     }
 
 
