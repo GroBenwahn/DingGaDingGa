@@ -12,6 +12,7 @@ public class GamePlay : MonoBehaviour
     public Sound soundScript;
     public MidiCD midi; 
     public Playset playset;
+    public Start_bt start_bt;
     public static GamePlay Instance;
     public AudioSource audioSource;
     public AudioClip[] audioClips;
@@ -22,17 +23,17 @@ public class GamePlay : MonoBehaviour
         
         Instance = this;
         GetDataFromMidi(MidiCD. midiFile);
-        Debug.Log("void Start() 작동중");
+        Debug.Log("GamePlay 에 midi 불러옴");
        
         int selectedClipIndex = FindObjectOfType<Sound>().selectedClipIndex;
         audioSource.clip = audioClips[selectedClipIndex];
-        Debug.Log("ClipIndex" + selectedClipIndex);
-        Debug.Log("sound 클립  작동중");
+        Debug.Log("ClipIndex = " + selectedClipIndex);
+        Debug.Log("사운드 클립  작동중");
 
-        float selectedSpeed = FindObjectOfType<Sound>().selectedSpeed;
+        float selectedSpeed = FindObjectOfType<Start_bt>().selectedSpeed;
         audioSource.pitch = selectedSpeed;
-        Debug.Log("sound speed " + selectedSpeed);
-
+        Debug.Log("sound speed  = " + selectedSpeed);
+        Debug.Log("사운드 스피드  작동중");
     }
 
 

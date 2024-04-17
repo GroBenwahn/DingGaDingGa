@@ -19,17 +19,17 @@ public class Sound_Speed : MonoBehaviour
             {
                 case "0.5":
                     selectedSpeed = 0.5f;
-                    Debug.Log(selectedSpeed);
+                    //Debug.Log(selectedSpeed);
                     break;
 
                 case "0.75":
                     selectedSpeed = 0.75f;
-                    Debug.Log(selectedSpeed);
+                    //Debug.Log(selectedSpeed);
                     break;
 
                 case "1.0":
                     selectedSpeed = 1.0f;
-                    Debug.Log(selectedSpeed);
+                    //Debug.Log(selectedSpeed);
                     break;
 
                 default:

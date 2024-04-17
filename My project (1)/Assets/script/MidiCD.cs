@@ -28,16 +28,15 @@ public class MidiCD : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    //public int playerData; 
 
     public void ReadFromFileAndSendData(string fileLocation)
     {
         string filePath = Path.Combine(Application.streamingAssetsPath + "/" + fileLocation);
-        //gamePlay.playerData = playerData;  // GamePlay의 playerData에 데이터 전달
+        
         try
         {
             midiFile = MidiFile.Read(filePath);
-            Debug.Log("ReadFromFileAndSendData파일을 불러옴");
+            Debug.Log("midi파일을 불러옴");
 
         }
             
@@ -45,6 +44,11 @@ public class MidiCD : MonoBehaviour
         {
             Debug.LogError("파일을 읽을 수 없음: " + e.Message);
         }
+    }
+
+    public MidiFile GetMidiFile()
+    {
+        return midiFile;
     }
 }
 
