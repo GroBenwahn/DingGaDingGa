@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/main_scene.unity
+    guid: 2ca4ca20465db474bb7d1b6ae7c58deb
+  - enabled: 1
+    path: Assets/Scenes/select_1_scene.unity
+    guid: a099f8fee89806e42bfa1a58de3142bf
+  - enabled: 1
+    path: Assets/Scenes/option_scene.unity
+    guid: 3e1958be5e13aa2438639bca019420aa
+  - enabled: 1
+    path: Assets/Scenes/audio_volume_scene.unity
+    guid: 19c33455c3baa084a80076d380a027b1
+  - enabled: 1
+    path: Assets/Scenes/game_scene.unity
+    guid: a06da4c7a5d97f645be40500bf1f6260
+  - enabled: 0
+    path: Assets/Scenes/select_scene.unity
+    guid: 8be145bc11f750447a40ae4c3cb3bbd3
+  m_configObjects: {}
