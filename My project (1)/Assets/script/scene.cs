@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;//<- ÀÌ°Å ÇÊ¼ö ÀÔ·Â
+using UnityEngine.SceneManagement;//<- ï¿½Ì°ï¿½ ï¿½Ê¼ï¿½ ï¿½Ô·ï¿½
 
 public class Scen : MonoBehaviour
 {
@@ -16,35 +16,40 @@ public class Scen : MonoBehaviour
 
     }
 
-    public void Game_Exit()   //°ÔÀÓ Á¾·á
+    public void Game_Exit()   //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         Application.Quit();
-        UnityEngine.Debug.Log("°ÔÀÓÀÌ Á¾·áµÇ¾ú½À´Ï´Ù.");
+        UnityEngine.Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
     }
 
 
-    public void main_Scene()    // ¹è°æ ¾À 
+    public void main_Scene()    // ï¿½ï¿½ï¿½ ï¿½ï¿½ 
     {
-        SceneManager.LoadScene(0);   // ºôµå ¼¼ÆÃ¿¡¼­ ¼øÀ§°¡ ÀÖÀ½
+        SceneManager.LoadScene(0);   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
-    public void select_Scene()    // À½¾Ç ¸®½ºÆ® ¾À 
+    public void select_Scene()    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ 
     {
-        SceneManager.LoadScene(1);   // ºôµå ¼¼ÆÃ¿¡¼­ ¼øÀ§°¡ ÀÖÀ½
+        SceneManager.LoadScene(1);   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
-    public void option_Scene()    // ¼³Á¤ ¾À 
+    public void option_Scene()    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 
     {
-        SceneManager.LoadScene(2);   // ºôµå ¼¼ÆÃ¿¡¼­ ¼øÀ§°¡ ÀÖÀ½
+        SceneManager.LoadScene(2);   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
-    public void In_Game_Scene()    // °ÔÀÓ ¾À 
+    public void In_Game_Scene()    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 
     {
-        SceneManager.LoadScene(4);   // ºôµå ¼¼ÆÃ¿¡¼­ ¼øÀ§°¡ ÀÖÀ½
+        SceneManager.LoadScene(4);   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
-    public void audio_scene()    // °ÔÀÓ ¾À 
+    public void audio_scene()    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 
     {
-        SceneManager.LoadScene(3);   // ºôµå ¼¼ÆÃ¿¡¼­ ¼øÀ§°¡ ÀÖÀ½
+        SceneManager.LoadScene(3);   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    }
+    
+    public void score_Scene()    // ìŠ¤ì½”ì–´ ì”¬ 
+    {
+        SceneManager.LoadScene(5);   // ë¹Œë“œ ì„¸íŒ…ì—ì„œ ìˆœìœ„ê°€ ìžˆìŒ
     }
 }
