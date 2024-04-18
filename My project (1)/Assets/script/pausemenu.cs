@@ -32,10 +32,7 @@ public class pausemenu : MonoBehaviour
 
     }
 
-/*if (pausemenu.GameIsPaused)
-{
-    source.pitch *= .5f;
-}*/
+
 
     public void Pause() 
     {

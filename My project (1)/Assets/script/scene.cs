@@ -26,11 +26,13 @@ public class Scen : MonoBehaviour
     public void main_Scene()    // ��� �� 
     {
         SceneManager.LoadScene(0);   // ���� ���ÿ��� ������ ����
+        //AudioSource.pitch = FindObjectOfType<Start_bt>().selectedSpeed;
     }
 
     public void select_Scene()    // ���� ����Ʈ �� 
     {
         SceneManager.LoadScene(1);   // ���� ���ÿ��� ������ ����
+        //AudioSource.pitch = FindObjectOfType<Start_bt>().selectedSpeed;
     }
 
     public void option_Scene()    // ���� �� 
