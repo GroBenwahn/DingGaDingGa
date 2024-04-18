@@ -14,6 +14,8 @@ public class Score : MonoBehaviour
     private static int goodScore;
     private static int missScore;
     private static int maxCombo;
+    // private static float accuracy;      
+    private static int total;
 
     void Start()
     {
@@ -23,9 +25,10 @@ public class Score : MonoBehaviour
         goodScore = 0;
         missScore = 0;
         maxCombo = 0;
+        total = 0;
     }
 
-    // Max Combo 
+    // Max Combo ()
     public static void UpdateMaxCombo(int currentCombo)
     {
         if (currentCombo > maxCombo)
@@ -40,6 +43,7 @@ public class Score : MonoBehaviour
         Instance.hitSFX.Play();
         comboScore += 1;
         perfectScore++;
+        total++;
         hit_t = "Perfect";
         UpdateMaxCombo(comboScore);
     }
@@ -51,6 +55,7 @@ public class Score : MonoBehaviour
         comboScore += 1;
         hit_t = "Good";
         goodScore++;
+        total++;
         UpdateMaxCombo(comboScore);
     }
 
@@ -60,6 +65,7 @@ public class Score : MonoBehaviour
         Instance.missSFX.Play();
         comboScore = 0;
         missScore++;
+        total++;
         hit_t = "miss";
     }
     
@@ -70,8 +76,9 @@ public class Score : MonoBehaviour
         hitText.text = hit_t;
     }
 
-    public (int, int, int, int) GetScores() 
+
+    public (int, int, int, int, int) GetScores() 
     {
-        return (perfectScore, goodScore, missScore, maxCombo);
+        return (perfectScore, goodScore, missScore, maxCombo, total);
     }
 }
