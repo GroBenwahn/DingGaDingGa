@@ -6,32 +6,61 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TextMeshProUGUI perfectScoreText, goodScoreText, missScoreText, comboScoreText;
+    public TextMeshProUGUI perfectScoreText, goodScoreText, missScoreText, maxComboText, accuracyText, rankText;
 
 
     int perfectScore;
     int goodScore;
     int missScore;
-    int comboScore;
+    int maxCombo;
+    int total;  // 전체 노트 값
+    float accuracy;
     private Score scoreScript;
+    string rank;
 
     void Awake() 
     {
         // Score 스크립트의 인스턴스를 참조합니다.
         scoreScript = Score.Instance;
+        perfectScore = 0;
+        goodScore = 0;
+        missScore = 0;
+        maxCombo = 0;
+        total = 0;
+        rank = "";
 
         // GetScores() 메서드를 호출하여 점수 데이터를 가져옵니다.
-        (perfectScore, goodScore, missScore, comboScore) = scoreScript.GetScores();
+        (perfectScore, goodScore, missScore, maxCombo, total) = scoreScript.GetScores();
 
         // 가져온 점수 데이터를 사용합니다.
         Debug.Log("Perfect Score: " + perfectScore);
         Debug.Log("Good Score: " + goodScore);
         Debug.Log("Miss Score: " + missScore);
-        Debug.Log("Combo Score: " + comboScore);
+        Debug.Log("Max Combo: " + maxCombo);
+        Debug.Log("Total: " + total);
 
-        // 이후에 필요한 작업을 수행합니다.
+        accuracy = CalculateAccuracy(perfectScore, goodScore, total);
+        Debug.Log("Accuracy: " + accuracy);
+        rank = Rank(accuracy);
+        Debug.Log("Rank: " + rank);
     }
 
+    private string Rank(float accuracy)     // 랭크 반환
+    {
+        if (accuracy >= 90.00) return "S";
+        else if (accuracy >= 80.00) return "A";
+        else if (accuracy >= 70.00) return "B";
+        else if (accuracy >= 60.00) return "C";
+        else if (accuracy >= 50.00) return "D";
+        else if (accuracy >= 40.00) return "E";
+        else return "F";
+    }
+
+    private float CalculateAccuracy(int perfectScore, int goodScore, int total)    // 정확도 계산
+    {   
+        if (total == 0) return 0;
+        return (float)(perfectScore + goodScore) / total * 100;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +68,9 @@ public class ScoreManager : MonoBehaviour
         perfectScoreText.text = perfectScore.ToString();
         goodScoreText.text = goodScore.ToString();
         missScoreText.text = missScore.ToString();
-        comboScoreText.text = comboScore.ToString();
+        maxComboText.text = maxCombo.ToString();
+        accuracyText.text = accuracy.ToString("F2");
+        rankText.text = rank;
     }
 
     // Update is called once per frame
