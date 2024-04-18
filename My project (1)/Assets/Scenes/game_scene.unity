@@ -415,9 +415,25 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4811321152845639350, guid: 664a5c576dfee0b479c536ded51c8869, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1027201125}
+    - target: {fileID: 4811321152845639350, guid: 664a5c576dfee0b479c536ded51c8869, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSound
+      objectReference: {fileID: 0}
     - target: {fileID: 4945767981568705691, guid: 664a5c576dfee0b479c536ded51c8869, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169372436705919511, guid: 664a5c576dfee0b479c536ded51c8869, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1027201125}
+    - target: {fileID: 6169372436705919511, guid: 664a5c576dfee0b479c536ded51c8869, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSound
       objectReference: {fileID: 0}
     - target: {fileID: 6275772914329993283, guid: 664a5c576dfee0b479c536ded51c8869, type: 3}
       propertyPath: m_Name
@@ -439,6 +455,33 @@ PrefabInstance:
 --- !u!224 &202564414 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2684435630109717385, guid: 664a5c576dfee0b479c536ded51c8869, type: 3}
+  m_PrefabInstance: {fileID: 202564413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &202564415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6169372436705919511, guid: 664a5c576dfee0b479c536ded51c8869, type: 3}
+  m_PrefabInstance: {fileID: 202564413}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &202564416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4811321152845639350, guid: 664a5c576dfee0b479c536ded51c8869, type: 3}
+  m_PrefabInstance: {fileID: 202564413}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &202564417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6275772914329993283, guid: 664a5c576dfee0b479c536ded51c8869, type: 3}
   m_PrefabInstance: {fileID: 202564413}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &218996309
@@ -1112,7 +1155,7 @@ MonoBehaviour:
   lanes:
   - {fileID: 266471480}
   - {fileID: 1224850492}
-  songDelayInSeconds: 0
+  songDelayInSeconds: 1
   marginOfError: 0.1
   goodLine: 0.2
   inputDelayInMilliseconds: 0
@@ -1589,7 +1632,7 @@ MonoBehaviour:
   - {fileID: 1211053467}
   - {fileID: 1007239549}
   mixer: {fileID: 24100000, guid: 1b14b4d64b189f04bb52cae194765805, type: 2}
-  musicSlider: {fileID: 0}
+  musicSlider: {fileID: 202564415}
 --- !u!114 &1027201125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1602,8 +1645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a38e7e73b32924bae0d60218fcd7c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameaudioSlider: {fileID: 0}
-  soundEffectsSlider: {fileID: 0}
+  gameaudioSlider: {fileID: 202564415}
+  soundEffectsSlider: {fileID: 202564416}
   gameaudio:
   - {fileID: 1865987220}
   - {fileID: 364019468}
@@ -1612,7 +1655,7 @@ MonoBehaviour:
   - {fileID: 1211053467}
   - {fileID: 1007239549}
   mixer: {fileID: 24100000, guid: 1b14b4d64b189f04bb52cae194765805, type: 2}
-  musicSlider: {fileID: 0}
+  musicSlider: {fileID: 202564415}
 --- !u!1 &1177729556
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,7 +2136,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 202564417}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 0
@@ -2684,16 +2727,16 @@ AudioSource:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 857745002}
+  - {fileID: 22272015}
   - {fileID: 199864429}
   - {fileID: 618294595}
   - {fileID: 1572791140}
   - {fileID: 218996311}
   - {fileID: 731965668}
-  - {fileID: 857745002}
   - {fileID: 266471479}
   - {fileID: 1224850491}
   - {fileID: 409861647}
   - {fileID: 286302696}
   - {fileID: 1027201123}
   - {fileID: 790051942}
-  - {fileID: 22272015}
