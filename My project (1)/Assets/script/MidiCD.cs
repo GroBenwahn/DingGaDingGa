@@ -10,7 +10,6 @@ public class MidiCD : MonoBehaviour
 {
     public GamePlay gamePlay ;
     public static MidiFile midiFile;
-    //public string fileLocation;
 
     void Start()
     {

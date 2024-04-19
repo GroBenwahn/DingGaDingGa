@@ -6,42 +6,20 @@ using UnityEngine.UI;
 
 public class Sound_Speed : MonoBehaviour
 {
-    public ToggleGroup toggleGroup;
-    public float selectedSpeed = 1.0f;
+    private static readonly string SelectedSpeedPref = "SelectedSpeedPref";
+    private float selectedSpeedFloat;
+   
 
-    public void ToggleGroupSelection()
+    public float selectedSpeed;// = 1.0f;
+    public void Music_Speed(float speed)
     {
-        Toggle selectedToggle = toggleGroup.ActiveToggles().FirstOrDefault();
-
-        if (selectedToggle != null)
-        {
-            switch (selectedToggle.name)
-            {
-                case "0.5":
-                    selectedSpeed = 0.5f;
-                    Debug.Log(selectedSpeed);
-                    break;
-
-                case "0.75":
-                    selectedSpeed = 0.75f;
-                    Debug.Log(selectedSpeed);
-                    break;
-
-                case "1.0":
-                    selectedSpeed = 1.0f;
-                    Debug.Log(selectedSpeed);
-                    break;
-
-                default:
-                    selectedSpeed = 1.0f; // 기본값은 1.0
-                    break;
-            }
-        }
-    }
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
+        selectedSpeed = speed;
+        selectedSpeedFloat = selectedSpeed;
+        PlayerPrefs.SetFloat(SelectedSpeedPref, selectedSpeedFloat);
+        Debug.Log(selectedSpeed);
+        Debug.Log("selected" + selectedSpeedFloat);
+        Debug.Log("selectedPref" + SelectedSpeedPref);
+        Debug.Log(selectedSpeed);
     }
 
     

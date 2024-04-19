@@ -10,6 +10,9 @@ using UnityEngine.SceneManagement;
 
 public class GamePlay : MonoBehaviour
 {
+    private static readonly string SelectedSpeedPref = "SelectedSpeedPref";
+    private static readonly string SelectedClipIndexPref = "SelectedClipIndexPref";
+
     public Sound soundScript;
     public MidiCD midi;
     public Playset playset;
@@ -26,16 +29,12 @@ public class GamePlay : MonoBehaviour
         GetDataFromMidi(MidiCD.midiFile);
         Debug.Log("GamePlay 에 midi 불러옴");
 
-        int selectedClipIndex = FindObjectOfType<Sound>().selectedClipIndex;
+        int selectedClipIndex = PlayerPrefs.GetInt(SelectedClipIndexPref);
         audioSource.clip = audioClips[selectedClipIndex];
         Debug.Log("ClipIndex = " + selectedClipIndex);
         Debug.Log("사운드 클립  작동중");
 
-        float selectedSpeed = FindObjectOfType<Start_bt>().selectedSpeed;
-        audioSource.pitch = selectedSpeed;
-        Debug.Log("sound speed  = " + selectedSpeed);
-        Debug.Log("사운드 스피드  작동중");
-
+        
         
     }
 
@@ -68,7 +67,13 @@ public class GamePlay : MonoBehaviour
     public void StartSong()
     {
         audioSource.Play();
+        float selectedSpeed = PlayerPrefs.GetFloat(SelectedSpeedPref);
+        audioSource.pitch = selectedSpeed;
+        Debug.Log("sound speed  = " + selectedSpeed);
+        Debug.Log("사운드 스피드  작동중");
+
         Invoke("LoadNextScene", audioSource.clip.length + 1.5f);
+        
     }
 
 
@@ -86,7 +91,7 @@ public class GamePlay : MonoBehaviour
         }
         else 
         {
-            audioSource.pitch = FindObjectOfType<Start_bt>().selectedSpeed;
+            audioSource.pitch = PlayerPrefs.GetFloat(SelectedSpeedPref);
         }
     }
 

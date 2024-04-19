@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;//<- �̰� �ʼ� �Է�
+using UnityEngine.SceneManagement;
 
 public class Scen : MonoBehaviour
 {
@@ -16,42 +16,41 @@ public class Scen : MonoBehaviour
 
     }
 
-    public void Game_Exit()   //���� ����
+    public void Game_Exit()   
     {
         Application.Quit();
-        UnityEngine.Debug.Log("������ ����Ǿ����ϴ�.");
+        UnityEngine.Debug.Log("game_exit");
     }
 
 
-    public void main_Scene()    // ��� �� 
+    public void main_Scene()   
     {
-        SceneManager.LoadScene(0);   // ���� ���ÿ��� ������ ����
-        //AudioSource.pitch = FindObjectOfType<Start_bt>().selectedSpeed;
+        SceneManager.LoadScene(0);   
+        
     }
 
-    public void select_Scene()    // ���� ����Ʈ �� 
+    public void select_Scene()    
     {
-        SceneManager.LoadScene(1);   // ���� ���ÿ��� ������ ����
-        //AudioSource.pitch = FindObjectOfType<Start_bt>().selectedSpeed;
+        SceneManager.LoadScene(1);   
     }
 
-    public void option_Scene()    // ���� �� 
+    public void option_Scene()    
     {
-        SceneManager.LoadScene(2);   // ���� ���ÿ��� ������ ����
+        SceneManager.LoadScene(2);   
     }
 
-    public void In_Game_Scene()    // ���� �� 
+    public void In_Game_Scene()    
     {
-        SceneManager.LoadScene(4);   // ���� ���ÿ��� ������ ����
+        SceneManager.LoadScene(4);   
     }
 
-    public void audio_scene()    // ���� �� 
+    public void audio_scene()    
     {
-        SceneManager.LoadScene(3);   // ���� ���ÿ��� ������ ����
+        SceneManager.LoadScene(3);   
     }
     
-    public void score_Scene()    // 스코어 씬 
+    public void score_Scene()    
     {
-        SceneManager.LoadScene(5);   // 빌드 세팅에서 순위가 있음
+        SceneManager.LoadScene(5);   
     }
 }
