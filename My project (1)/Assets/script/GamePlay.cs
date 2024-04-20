@@ -16,7 +16,6 @@ public class GamePlay : MonoBehaviour
     public Sound soundScript;
     public MidiCD midi;
     public Playset playset;
-    public Start_bt start_bt;
     public static GamePlay Instance;
     public AudioSource audioSource;
     public AudioClip[] audioClips;

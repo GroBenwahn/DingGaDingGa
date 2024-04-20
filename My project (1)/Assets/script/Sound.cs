@@ -23,10 +23,6 @@ public class Sound : MonoBehaviour
 
     }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
 
     public void SetClipIndex(int clipIndex)
     {

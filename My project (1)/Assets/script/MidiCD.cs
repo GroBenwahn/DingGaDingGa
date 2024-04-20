@@ -36,7 +36,6 @@ public class MidiCD : MonoBehaviour
         {
             midiFile = MidiFile.Read(filePath);
             Debug.Log("midi파일을 불러옴");
-
         }
             
         catch (IOException e)

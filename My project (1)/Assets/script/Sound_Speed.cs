@@ -10,7 +10,7 @@ public class Sound_Speed : MonoBehaviour
     private float selectedSpeedFloat;
    
 
-    public float selectedSpeed;// = 1.0f;
+    public float selectedSpeed;
     public void Music_Speed(float speed)
     {
         selectedSpeed = speed;
