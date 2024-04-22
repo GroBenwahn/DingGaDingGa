@@ -24,7 +24,7 @@ public class GamePlay : MonoBehaviour
     void Start()
     {
         Instance = this;
-        // gameEnded = false;
+        
         GetDataFromMidi(MidiCD.midiFile);
         Debug.Log("GamePlay 에 midi 불러옴");
 
@@ -80,6 +80,7 @@ public class GamePlay : MonoBehaviour
     {
         return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
     }
+
 
     void Update()
     {
