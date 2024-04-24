@@ -287,7 +287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guitarmidi: {fileID: 0}
-  audioSource: {fileID: 0}
   lanes: []
 --- !u!4 &38428343
 Transform:
@@ -5425,7 +5424,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TEST.mid
+          m_StringArgument: octav_midi.mid
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
