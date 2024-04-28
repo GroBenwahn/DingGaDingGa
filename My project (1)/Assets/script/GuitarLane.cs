@@ -33,20 +33,33 @@ public class GuitarLane : MonoBehaviour
         }
     }
 
+    public void Able() 
+    {
+        currentPrefab.SetActive(true);
+
+    }
+
+    public void Disable()
+    {
+        currentPrefab.SetActive(false);
+    }
+
     void Update()
     {
         // 현재 시간을 가져옵니다.
         double currentTime = GamePlay.GetAudioSourceTime();
 
         // 이전에 생성된 노트의 생성 시간과 현재 시간 사이에 있는 노트를 모두 활성화합니다.
-        while (spawnIndex < timeStamps.Count && spawnIndex < notePrefabs.Length && timeStamps[spawnIndex] <= currentTime)
+        if (spawnIndex < timeStamps.Count && spawnIndex < notePrefabs.Length && timeStamps[spawnIndex] <= currentTime)
         {
             if (currentPrefab != null)
             {
-                currentPrefab.SetActive(false);
+                //Invoke("Disable", .1f);
+                Disable();
             }
             currentPrefab = notePrefabs[spawnIndex];
-            currentPrefab.SetActive(true);
+            //Invoke("Able", 0f);
+            Able();
             spawnIndex++;
         }
 
