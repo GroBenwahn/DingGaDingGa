@@ -7,6 +7,7 @@ public class pausemenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+
     
     void Update()      
     {
