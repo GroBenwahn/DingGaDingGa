@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI perfectScoreText, goodScoreText, missScoreText, maxComboText, accuracyText, rankText;
-
+    public RawImage image; // 이미지를 표시할 RawImage 컴포넌트
 
     int perfectScore;
     int goodScore;
@@ -62,9 +63,20 @@ public class ScoreManager : MonoBehaviour
         return (float)(perfectScore + goodScore) / total * 100;
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
+        string imageName = PlayerPrefs.GetString("ImageName");
+
+        // Resources 폴더 내에서 해당 이미지를 로드
+        Texture2D texture = Resources.Load<Texture2D>( imageName);
+        if (texture != null)
+        {
+            // RawImage에 이미지 설정
+            image.texture = texture;
+        }
+        Debug.Log(" image.texture : " + texture);
+
         perfectScoreText.text = perfectScore.ToString();
         goodScoreText.text = goodScore.ToString();
         missScoreText.text = missScore.ToString();
@@ -73,7 +85,7 @@ public class ScoreManager : MonoBehaviour
         rankText.text = rank;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
