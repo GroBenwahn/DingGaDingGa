@@ -47,12 +47,12 @@ public class ScoreManager : MonoBehaviour
 
     private string Rank(float accuracy)     // 랭크 반환
     {
-        if (accuracy >= 90.00) return "S";
-        else if (accuracy >= 80.00) return "A";
-        else if (accuracy >= 70.00) return "B";
-        else if (accuracy >= 60.00) return "C";
-        else if (accuracy >= 50.00) return "D";
-        else if (accuracy >= 40.00) return "E";
+        if (accuracy >= 98.00) return "S";
+        else if (accuracy >= 92.00) return "A";
+        else if (accuracy >= 83.00) return "B";
+        else if (accuracy >= 75.00) return "C";
+        else if (accuracy >= 65.00) return "D";
+        else if (accuracy >= 55.00) return "E";
         else return "F";
     }
 

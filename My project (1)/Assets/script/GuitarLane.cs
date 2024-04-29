@@ -11,10 +11,13 @@ public class GuitarLane : MonoBehaviour
 
     int spawnIndex = 0;
     GameObject currentPrefab;
-    //double previousTime = 0.0;
+    GameObject nextNotePrefab;
 
     void Start()
     {
+        // PlayerPrefs에서 설정한 속도 읽기
+        float selectedSpeed = PlayerPrefs.GetFloat("SelectedSpeedPref");
+        Time.timeScale = selectedSpeed;
         
     }
 
@@ -33,38 +36,52 @@ public class GuitarLane : MonoBehaviour
         }
     }
 
-    public void Able() 
-    {
-        currentPrefab.SetActive(true);
-
-    }
-
-    public void Disable()
-    {
-        currentPrefab.SetActive(false);
-    }
-
     void Update()
     {
-        // 현재 시간을 가져옵니다.
-        double currentTime = GamePlay.GetAudioSourceTime();
-
-        // 이전에 생성된 노트의 생성 시간과 현재 시간 사이에 있는 노트를 모두 활성화합니다.
-        if (spawnIndex < timeStamps.Count && spawnIndex < notePrefabs.Length && timeStamps[spawnIndex] <= currentTime)
+        // 노트 생성 인덱스가 리스트 크기보다 작을 때만 실행
+        if (spawnIndex < timeStamps.Count)
         {
-            if (currentPrefab != null)
+            // 현재 재생 중인 시간이 노트 생성 시간보다 크거나 같으면 노트를 생성
+            if (GamePlay.GetAudioSourceTime() >= timeStamps[spawnIndex])
             {
-                //Invoke("Disable", .1f);
-                Disable();
-            }
-            currentPrefab = notePrefabs[spawnIndex];
-            //Invoke("Able", 0f);
-            Able();
-            spawnIndex++;
-        }
+                // 새로운 노트가 나오면 현재 프리팹을 off.
+               
 
-        // 현재 시간과 이전 시간을 갱신합니다.
-        //previousTime = currentTime;
+                if (currentPrefab != null)
+                {
+                    currentPrefab.SetActive(false);
+                    Debug.Log("현재 노트 꺼짐 ---- " + currentPrefab);
+                }
+
+                // 새로운 노트에 프리팹을 on
+                currentPrefab = notePrefabs[spawnIndex];
+                currentPrefab.transform.position = new Vector3(950f, 800f, 0f);
+                currentPrefab.transform.localScale = new Vector3(600f, 400f, 0f);
+                currentPrefab.SetActive(true);
+                Debug.Log("현재 노트 켜짐 ---- " + currentPrefab);
+
+
+
+                if (spawnIndex < timeStamps.Count - 1)
+                {
+                    nextNotePrefab = notePrefabs[spawnIndex + 1];
+                    nextNotePrefab.transform.position = new Vector3(1550f, 800f, 0f);
+                    nextNotePrefab.transform.localScale = new Vector3(500f, 300f, 0f);
+                    nextNotePrefab.SetActive(true);
+                    Debug.Log("다음 노트 Prefab 켜짐 ---- " + nextNotePrefab);
+                }
+
+                if (spawnIndex > 0)
+                {
+                    nextNotePrefab = notePrefabs[spawnIndex -1];
+                    nextNotePrefab.SetActive(false);
+                    Debug.Log("다음 노트 Prefab 꺼짐 ---- " + nextNotePrefab);
+                }
+
+                spawnIndex++;
+                Debug.Log("spawnIndex" + spawnIndex);
+            }
+        }
     }
 }
 
