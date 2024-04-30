@@ -19,11 +19,13 @@ public class AudioSetteingtutorial : MonoBehaviour
     {
         ContinueSettings();
         musicSlider.value = PlayerPrefs.GetFloat(MIXER_MUSIC);
+
     }
 
     private void ContinueSettings() 
     {
         gameaudioFloat = PlayerPrefs.GetFloat(GameaudioPref);
+        gameaudioFloat = PlayerPrefs.GetFloat(MIXER_MUSIC);
         soundEffectsFloat = PlayerPrefs.GetFloat(SoundEffectsPref);
 
         for (int a = 0; a < gameaudio.Length; a++)
