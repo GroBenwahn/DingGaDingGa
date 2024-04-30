@@ -18,20 +18,32 @@ public class AudioSetteingtutorial : MonoBehaviour
     void Awake()
     {
         ContinueSettings();
-        musicSlider.value = PlayerPrefs.GetFloat(MIXER_MUSIC);
-
+        
+    }
+    void Start() 
+    {
+        float savedvalue = PlayerPrefs.GetFloat(MIXER_MUSIC);
+        SetMusicVolume(savedvalue);
+        mixer.SetFloat(MIXER_MUSIC, Mathf.Log10(savedvalue) * 20);
+        musicSlider.value = savedvalue;
+    }
+    
+    void SetMusicVolume(float value)
+    {
+        mixer.SetFloat(MIXER_MUSIC, Mathf.Log10(value) * 20);
+        PlayerPrefs.SetFloat(MIXER_MUSIC, value);
     }
 
     private void ContinueSettings() 
     {
         gameaudioFloat = PlayerPrefs.GetFloat(GameaudioPref);
-        gameaudioFloat = PlayerPrefs.GetFloat(MIXER_MUSIC);
         soundEffectsFloat = PlayerPrefs.GetFloat(SoundEffectsPref);
 
         for (int a = 0; a < gameaudio.Length; a++)
         {
             gameaudio[a].volume = gameaudioFloat;
         }
+       
         for (int i = 0; i < soundEffectsAudio.Length; i++)
         {
             soundEffectsAudio[i].volume = soundEffectsFloat;

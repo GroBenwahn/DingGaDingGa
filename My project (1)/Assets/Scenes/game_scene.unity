@@ -2384,10 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a2bf1ec943d4e45abf0bc154122e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameaudio:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  gameaudio: []
   soundEffectsAudio:
   - {fileID: 1211053467}
   - {fileID: 1007239549}
@@ -2407,10 +2404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameaudioSlider: {fileID: 202564415}
   soundEffectsSlider: {fileID: 202564416}
-  gameaudio:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  gameaudio: []
   soundEffectsAudio:
   - {fileID: 1211053467}
   - {fileID: 1007239549}
