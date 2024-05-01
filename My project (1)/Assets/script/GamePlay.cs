@@ -6,7 +6,7 @@ using System;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 
 public class GamePlay : MonoBehaviour
 {
@@ -21,6 +21,7 @@ public class GamePlay : MonoBehaviour
     public AudioClip[] audioClips;
     Coroutine changePitchCoroutine;
     //bool isPlaying;
+    public TMPro.TextMeshPro countdownText;
 
     void Start()
     {
@@ -113,11 +114,13 @@ public class GamePlay : MonoBehaviour
 
     IEnumerator ChangePitch() 
     {
-        while (true)
+        for (int i = 3; i >= 0; i--)
         {
-            yield return new WaitForSeconds(3.0f);
-            audioSource.pitch = PlayerPrefs.GetFloat(SelectedSpeedPref);
+            yield return new WaitForSeconds(1.0f);
+            countdownText.text = i.ToString();
         }
+        countdownText.text = "";
+        audioSource.pitch = PlayerPrefs.GetFloat(SelectedSpeedPref);
     }
 
     void Update()
