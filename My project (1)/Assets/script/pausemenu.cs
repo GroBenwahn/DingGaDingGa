@@ -43,4 +43,12 @@ public class pausemenu : MonoBehaviour
         Debug.Log("pause");
     }
 
+    public void Restart()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        GamePlay.Instance.RestartGame();
+    }
+
 }

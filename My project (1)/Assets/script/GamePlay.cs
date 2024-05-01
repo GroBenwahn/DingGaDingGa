@@ -76,6 +76,11 @@ public class GamePlay : MonoBehaviour
         
     }
 
+    //다시하기
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     public static double GetAudioSourceTime()
     {
