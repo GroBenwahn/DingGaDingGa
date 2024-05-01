@@ -19,7 +19,8 @@ public class GamePlay : MonoBehaviour
     public static GamePlay Instance;
     public AudioSource audioSource;
     public AudioClip[] audioClips;
-
+    Coroutine changePitchCoroutine;
+    //bool isPlaying;
 
     void Start()
     {
@@ -81,18 +82,42 @@ public class GamePlay : MonoBehaviour
         return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
     }
 
-
-    void Update()
+    public void OnToggleButton() 
     {
+        //pausemenu.GameIsPaused = isPlaying;
+        
+
         if (pausemenu.GameIsPaused)
         {
             audioSource.pitch = 0f;
             Debug.Log("pause_audiosource");
+            if (changePitchCoroutine != null)
+            {
+                StopCoroutine(changePitchCoroutine);
+            }
         }
-        else 
+        else
         {
+            if (changePitchCoroutine != null)
+            {
+                StopCoroutine(changePitchCoroutine);
+            }
+            changePitchCoroutine = StartCoroutine(ChangePitch());
+        }
+    }
+
+    IEnumerator ChangePitch() 
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3.0f);
             audioSource.pitch = PlayerPrefs.GetFloat(SelectedSpeedPref);
         }
+    }
+
+    void Update()
+    {
+        
     }
 
     // 다음 씬으로 전환하는 함수
