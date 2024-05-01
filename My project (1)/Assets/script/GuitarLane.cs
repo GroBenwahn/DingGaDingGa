@@ -56,7 +56,7 @@ public class GuitarLane : MonoBehaviour
                 // 새로운 노트에 프리팹을 on
                 currentPrefab = notePrefabs[spawnIndex];
                 currentPrefab.transform.position = new Vector3(950f, 800f, 0f);
-                currentPrefab.transform.localScale = new Vector3(600f, 400f, 0f);
+                currentPrefab.transform.localScale = new Vector3(490f, 380f, 0f);
                 currentPrefab.SetActive(true);
                 Debug.Log("현재 노트 켜짐 ---- " + currentPrefab);
 
@@ -66,7 +66,7 @@ public class GuitarLane : MonoBehaviour
                 {
                     nextNotePrefab = notePrefabs[spawnIndex + 1];
                     nextNotePrefab.transform.position = new Vector3(1550f, 800f, 0f);
-                    nextNotePrefab.transform.localScale = new Vector3(500f, 300f, 0f);
+                    nextNotePrefab.transform.localScale = new Vector3(400f, 280f, 0f);
                     nextNotePrefab.SetActive(true);
                     Debug.Log("다음 노트 Prefab 켜짐 ---- " + nextNotePrefab);
                 }
