@@ -30,7 +30,7 @@ public class GuitarLane : MonoBehaviour
                 // 노트에 해당하는 프리팹과 생성 시간을 추가.
                 GameObject selectedPrefab = notePrefabs[note.NoteNumber];
                 var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, GuitarMidi.midiFile.GetTempoMap());
-                double timeStamp = (double)metricTimeSpan.TotalSeconds + 1.0; // 노트의 생성 시간을 초 단위로 변경합니다.
+                double timeStamp = (double)metricTimeSpan.TotalSeconds; // 노트의 생성 시간을 초 단위로 변경합니다.
                 timeStamps.Add(timeStamp);
             }
         }

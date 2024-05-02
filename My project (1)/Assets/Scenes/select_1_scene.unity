@@ -1336,6 +1336,7 @@ MonoBehaviour:
   playset: {fileID: 0}
   audioSource: {fileID: 0}
   audioClips: []
+  countdownText: {fileID: 0}
 --- !u!4 &906481166
 Transform:
   m_ObjectHideFlags: 0
@@ -1521,7 +1522,19 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Track 2.mid
+          m_StringArgument: sakura_ending.mid
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1600976636}
+        m_TargetAssemblyTypeName: GuitarMidi, Assembly-CSharp
+        m_MethodName: ReadFromGuitarCodeData
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: G_sakura_ending1.mid
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
@@ -2658,7 +2671,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 1to30.mid
+          m_StringArgument: G_sakura_ending1.mid
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
