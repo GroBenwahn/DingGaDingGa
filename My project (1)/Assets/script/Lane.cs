@@ -61,19 +61,27 @@ public class Lane : MonoBehaviour
                 if (Math.Abs(audioTime - timeStamp) < marginOfError)
                 {
                     // Perfect
-                    Hit();
+                    /*Hit();
                     print($"Perfect on {inputIndex} note");
+                    Destroy(notes[inputIndex].gameObject);
+                    inputIndex++;*/
+                    HitGood();
+                    print($"Good on {inputIndex} note");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
                 }
                 
                 else if (Math.Abs(audioTime - timeStamp) < goodLine)
                 {
-                    // Good
-                    HitGood();
-                    print($"Good on {inputIndex} note");
+                    Hit();
+                    print($"Perfect on {inputIndex} note");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
+                    // Good
+                    /*HitGood();
+                    print($"Good on {inputIndex} note");
+                    Destroy(notes[inputIndex].gameObject);
+                    inputIndex++;*/
                 }
                 
                 else
