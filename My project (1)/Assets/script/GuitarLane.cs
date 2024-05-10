@@ -6,80 +6,78 @@ using UnityEngine;
 
 public class GuitarLane : MonoBehaviour
 {
-    public GameObject[] notePrefabs; // 0ºÎÅÍ 42±îÁöÀÇ ³ëÆ®¿¡ ´ëÇÑ ÇÁ¸®ÆÕ ¹è¿­
-    public List<double> timeStamps = new List<double>(); // ³ëÆ® »ı¼º ½Ã°£ÀÇ Å¸ÀÓ½ºÅÆÇÁ ¸®½ºÆ®
+    public GameObject[] notePrefabs; // 0ë¶€í„° 42ê¹Œì§€ì˜ ë…¸íŠ¸ì— ëŒ€í•œ í”„ë¦¬íŒ¹ ë°°ì—´
+    public List<double> timeStamps = new List<double>(); // ë…¸íŠ¸ ìƒì„± ì‹œê°„ì˜ íƒ€ì„ìŠ¤íƒ¬í”„ ë¦¬ìŠ¤íŠ¸
 
     int spawnIndex = 0;
     GameObject currentPrefab;
     GameObject nextNotePrefab;
+    GameObject[] selectedPrefab;
 
     void Start()
     {
-        // PlayerPrefs¿¡¼­ ¼³Á¤ÇÑ ¼Óµµ ÀĞ±â
+        // PlayerPrefsì—ì„œ ì„¤ì •í•œ ì†ë„ ì½ê¸°
         float selectedSpeed = PlayerPrefs.GetFloat("SelectedSpeedPref");
         Time.timeScale = selectedSpeed;
         
     }
-
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
     {
+        selectedPrefab = new GameObject[array.Length]; // ì„ íƒëœ ë…¸íŠ¸ í”„ë¦¬íŒ¹ë“¤ì„ ì €ì¥í•  ë°°ì—´ ì´ˆê¸°í™”
+        int index = 0; // ë°°ì—´ ì¸ë±ìŠ¤ë¥¼ ì¶”ì í•˜ê¸° ìœ„í•œ ë³€ìˆ˜
+
         foreach (var note in array)
-        {
+        {   
             if (note.NoteNumber >= 0 && note.NoteNumber < notePrefabs.Length)
             {
-                // ³ëÆ®¿¡ ÇØ´çÇÏ´Â ÇÁ¸®ÆÕ°ú »ı¼º ½Ã°£À» Ãß°¡.
-                GameObject selectedPrefab = notePrefabs[note.NoteNumber];
+                // ë…¸íŠ¸ì— í•´ë‹¹í•˜ëŠ” í”„ë¦¬íŒ¹ê³¼ ìƒì„± ì‹œê°„ì„ ì¶”ê°€.
+                selectedPrefab[index] = notePrefabs[note.NoteNumber];
                 var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, GuitarMidi.midiFile.GetTempoMap());
-                double timeStamp = (double)metricTimeSpan.TotalSeconds; // ³ëÆ®ÀÇ »ı¼º ½Ã°£À» ÃÊ ´ÜÀ§·Î º¯°æÇÕ´Ï´Ù.
+                double timeStamp = (double)metricTimeSpan.TotalSeconds; // ë…¸íŠ¸ì˜ ìƒì„± ì‹œê°„ì„ ì´ˆ ë‹¨ìœ„ë¡œ ë³€ê²½í•©ë‹ˆë‹¤.
                 timeStamps.Add(timeStamp);
+                index++;
             }
         }
     }
 
     void Update()
     {
-        // ³ëÆ® »ı¼º ÀÎµ¦½º°¡ ¸®½ºÆ® Å©±âº¸´Ù ÀÛÀ» ¶§¸¸ ½ÇÇà
+        // ë…¸íŠ¸ ìƒì„± ì¸ë±ìŠ¤ê°€ ë¦¬ìŠ¤íŠ¸ í¬ê¸°ë³´ë‹¤ ì‘ì„ ë•Œë§Œ ì‹¤í–‰
         if (spawnIndex < timeStamps.Count)
         {
-            // ÇöÀç Àç»ı ÁßÀÎ ½Ã°£ÀÌ ³ëÆ® »ı¼º ½Ã°£º¸´Ù Å©°Å³ª °°À¸¸é ³ëÆ®¸¦ »ı¼º
+            // í˜„ì¬ ì¬ìƒ ì¤‘ì¸ ì‹œê°„ì´ ë…¸íŠ¸ ìƒì„± ì‹œê°„ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ìœ¼ë©´ ë…¸íŠ¸ë¥¼ ìƒì„±
             if (GamePlay.GetAudioSourceTime() >= timeStamps[spawnIndex])
             {
-                // »õ·Î¿î ³ëÆ®°¡ ³ª¿À¸é ÇöÀç ÇÁ¸®ÆÕÀ» off.
+                // ìƒˆë¡œìš´ ë…¸íŠ¸ê°€ ë‚˜ì˜¤ë©´ í˜„ì¬ í”„ë¦¬íŒ¹ì„ off.
                
 
                 if (currentPrefab != null)
                 {
                     currentPrefab.SetActive(false);
-                    Debug.Log("ÇöÀç ³ëÆ® ²¨Áü ---- " + currentPrefab);
                 }
 
-                // »õ·Î¿î ³ëÆ®¿¡ ÇÁ¸®ÆÕÀ» on
-                currentPrefab = notePrefabs[spawnIndex];
+                // ìƒˆë¡œìš´ ë…¸íŠ¸ì— í”„ë¦¬íŒ¹ì„ on
+                currentPrefab = selectedPrefab[spawnIndex];
                 currentPrefab.transform.position = new Vector3(950f, 800f, 0f);
                 currentPrefab.transform.localScale = new Vector3(490f, 380f, 0f);
                 currentPrefab.SetActive(true);
-                Debug.Log("ÇöÀç ³ëÆ® ÄÑÁü ---- " + currentPrefab);
-
 
 
                 if (spawnIndex < timeStamps.Count - 1)
                 {
-                    nextNotePrefab = notePrefabs[spawnIndex + 1];
+                    nextNotePrefab = selectedPrefab[spawnIndex + 1];
                     nextNotePrefab.transform.position = new Vector3(1550f, 800f, 0f);
                     nextNotePrefab.transform.localScale = new Vector3(400f, 280f, 0f);
                     nextNotePrefab.SetActive(true);
-                    Debug.Log("´ÙÀ½ ³ëÆ® Prefab ÄÑÁü ---- " + nextNotePrefab);
                 }
 
                 if (spawnIndex > 0)
                 {
-                    nextNotePrefab = notePrefabs[spawnIndex -1];
+                    nextNotePrefab = selectedPrefab[spawnIndex -1];
                     nextNotePrefab.SetActive(false);
-                    Debug.Log("´ÙÀ½ ³ëÆ® Prefab ²¨Áü ---- " + nextNotePrefab);
                 }
 
                 spawnIndex++;
-                Debug.Log("spawnIndex" + spawnIndex);
             }
         }
     }
