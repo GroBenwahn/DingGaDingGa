@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class MusicImage : MonoBehaviour
 {
     // 버튼에 해당하는 이미지 파일 이름 추가 가능 
-    public string aImageName = "[Busker Busker - Topic] 벚꽃 엔딩 (KvthiAoGTfo)"; 
-    public string bImageName = "c.va"; 
+    public string aImageName = "벚꽃엔딩"; 
+    public string bImageName = "너의의미";
+    public string cImageName = "아따맘마";
+    public string dImageName = "오르트구름";
 
     public void LoadThirdScene(string buttonName)
     {
@@ -22,6 +24,16 @@ public class MusicImage : MonoBehaviour
         {
             PlayerPrefs.SetString("ImageName", bImageName);
             Debug.Log(" image.texture : " + bImageName);
+        }
+        else if (buttonName == "song_3")
+        {
+            PlayerPrefs.SetString("ImageName", cImageName);
+            Debug.Log(" image.texture : " + cImageName);
+        }
+        else if (buttonName == "song_4")
+        {
+            PlayerPrefs.SetString("ImageName", dImageName);
+            Debug.Log(" image.texture : " + dImageName);
         }
 
     }
