@@ -501,7 +501,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sakura_ending_2.mid
+          m_StringArgument: your_meaning_1.mid
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1600976636}
@@ -513,7 +513,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: G_sakura_ending_2.mid
+          m_StringArgument: G_your_meaning_2.mid
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
@@ -1222,6 +1222,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1430765073}
+        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+        m_MethodName: SetClipIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!114 &246076230
 MonoBehaviour:
@@ -1272,7 +1284,6 @@ GameObject:
   - component: {fileID: 310608643}
   - component: {fileID: 310608647}
   - component: {fileID: 310608646}
-  - component: {fileID: 310608645}
   - component: {fileID: 310608644}
   m_Layer: 0
   m_Name: song_2
@@ -1359,36 +1370,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1148190868}
+        m_TargetAssemblyTypeName: MusicImage, Assembly-CSharp
+        m_MethodName: LoadThirdScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: song_2
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
---- !u!114 &310608645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310608642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1148190868}
-          m_TargetAssemblyTypeName: MusicImage, Assembly-CSharp
-          m_MethodName: LoadThirdScene
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: song_2
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &310608646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,7 +1420,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310608642}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &322682139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,7 +1845,6 @@ GameObject:
   - component: {fileID: 391878693}
   - component: {fileID: 391878697}
   - component: {fileID: 391878696}
-  - component: {fileID: 391878695}
   - component: {fileID: 391878694}
   m_Layer: 0
   m_Name: song_4
@@ -1938,36 +1931,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1148190868}
+        m_TargetAssemblyTypeName: MusicImage, Assembly-CSharp
+        m_MethodName: LoadThirdScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: song_4
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
---- !u!114 &391878695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391878692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1148190868}
-          m_TargetAssemblyTypeName: MusicImage, Assembly-CSharp
-          m_MethodName: LoadThirdScene
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: song_4
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &391878696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2005,7 +1981,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391878692}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &408337639
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,7 +1993,6 @@ GameObject:
   - component: {fileID: 408337640}
   - component: {fileID: 408337643}
   - component: {fileID: 408337642}
-  - component: {fileID: 408337645}
   - component: {fileID: 408337644}
   m_Layer: 0
   m_Name: song_1
@@ -2082,7 +2057,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408337639}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!114 &408337644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2142,36 +2117,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1148190868}
+        m_TargetAssemblyTypeName: MusicImage, Assembly-CSharp
+        m_MethodName: LoadThirdScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: song_1
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
---- !u!114 &408337645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408337639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1148190868}
-          m_TargetAssemblyTypeName: MusicImage, Assembly-CSharp
-          m_MethodName: LoadThirdScene
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: song_1
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &416041064
 GameObject:
   m_ObjectHideFlags: 0
@@ -3166,6 +3124,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1430765073}
+        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+        m_MethodName: SetClipIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -4527,6 +4497,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1430765073}
+        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+        m_MethodName: SetClipIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -7232,18 +7214,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1430765073}
-        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
-        m_MethodName: SetClipIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1555761408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7642,7 +7612,6 @@ GameObject:
   - component: {fileID: 1642196583}
   - component: {fileID: 1642196587}
   - component: {fileID: 1642196586}
-  - component: {fileID: 1642196585}
   - component: {fileID: 1642196584}
   m_Layer: 0
   m_Name: song_3
@@ -7729,36 +7698,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1148190868}
+        m_TargetAssemblyTypeName: MusicImage, Assembly-CSharp
+        m_MethodName: LoadThirdScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: song_3
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
---- !u!114 &1642196585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642196582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1148190868}
-          m_TargetAssemblyTypeName: MusicImage, Assembly-CSharp
-          m_MethodName: LoadThirdScene
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: song_3
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1642196586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7796,7 +7748,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642196582}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &1645447873
 GameObject:
   m_ObjectHideFlags: 0
@@ -8124,7 +8076,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sakura_ending_2.mid
+          m_StringArgument: your_meaning_2.mid
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1600976636}
@@ -8136,7 +8088,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: G_sakura_ending_2.mid
+          m_StringArgument: G_your_meaning_2.mid
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
@@ -8557,7 +8509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "busker busker  \n-sakura ending-"
+  m_text: "iu \n-your meaning-"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7f871c3be5a88904487ddfe793df34a8, type: 2}
   m_sharedMaterial: {fileID: -1570762389560724598, guid: 7f871c3be5a88904487ddfe793df34a8, type: 2}
@@ -8729,7 +8681,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sakura_ending_2.mid
+          m_StringArgument: sakura_ending_1.mid
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1600976636}
@@ -8930,6 +8882,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1430765073}
+        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+        m_MethodName: SetClipIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -9897,6 +9861,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1430765073}
+        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+        m_MethodName: SetClipIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!114 &1957036946
 MonoBehaviour:
@@ -10031,6 +10007,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.75
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1430765073}
+        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+        m_MethodName: SetClipIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -10263,18 +10251,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Scen, Assembly-CSharp
         m_MethodName: In_Game_Scene
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1430765073}
-        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
-        m_MethodName: SetClipIndex
-        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

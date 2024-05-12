@@ -2223,7 +2223,11 @@ MonoBehaviour:
   playset: {fileID: 790051943}
   audioSource: {fileID: 199864428}
   audioClips:
+  - {fileID: 8300000, guid: 06b14463652557b4896b9c7fb674c091, type: 3}
+  - {fileID: 8300000, guid: 31c96c8afe25aef4e98f1d0c974ed39c, type: 3}
   - {fileID: 8300000, guid: 933859a9c9ebe1e49b6924799e4ee3ed, type: 3}
+  - {fileID: 8300000, guid: a93717aa242f52e4a80cd5267626b394, type: 3}
+  - {fileID: 8300000, guid: 97be527e754a0e247a9cd2b983d4833f, type: 3}
   - {fileID: 8300000, guid: 126639353871d0f4088cbbace4f76276, type: 3}
   - {fileID: 8300000, guid: 75399d72ef0248846be9f422c654302a, type: 3}
   - {fileID: 8300000, guid: 33b47de2e4e15974da9dee095573496e, type: 3}
