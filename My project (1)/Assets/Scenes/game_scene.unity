@@ -2231,8 +2231,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a93717aa242f52e4a80cd5267626b394, type: 3}
   - {fileID: 8300000, guid: 97be527e754a0e247a9cd2b983d4833f, type: 3}
   - {fileID: 8300000, guid: 126639353871d0f4088cbbace4f76276, type: 3}
+  - {fileID: 8300000, guid: 8a869fbeaa7c16e4ab614e262263febf, type: 3}
+  - {fileID: 8300000, guid: af2e9596362e74a42b06dc068b8eb6ef, type: 3}
   - {fileID: 8300000, guid: 75399d72ef0248846be9f422c654302a, type: 3}
-  - {fileID: 8300000, guid: 33b47de2e4e15974da9dee095573496e, type: 3}
   countdownText: {fileID: 1400274180}
 --- !u!1 &827892050
 GameObject:
