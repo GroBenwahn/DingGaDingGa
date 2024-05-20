@@ -2435,11 +2435,11 @@ MonoBehaviour:
   - {fileID: 1224850492}
   songDelayInSeconds: 1
   marginOfError: 0.08
-  goodLine: 0.2
+  goodLine: 0.15
   inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: 7
-  noteTapY: -7
+  noteTapY: -9
 --- !u!114 &790051944
 MonoBehaviour:
   m_ObjectHideFlags: 0

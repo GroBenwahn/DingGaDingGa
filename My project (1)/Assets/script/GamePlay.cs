@@ -20,7 +20,6 @@ public class GamePlay : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] audioClips;
     Coroutine changePitchCoroutine;
-    //bool isPlaying;
     public TMPro.TextMeshPro countdownText;
 
     void Start()
@@ -90,8 +89,6 @@ public class GamePlay : MonoBehaviour
 
     public void OnToggleButton() 
     {
-        //pausemenu.GameIsPaused = isPlaying;
-        
 
         if (pausemenu.GameIsPaused)
         {
