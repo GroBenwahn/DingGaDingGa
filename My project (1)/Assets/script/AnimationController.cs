@@ -10,7 +10,7 @@ public class AnimationController : MonoBehaviour
 
     public void OnHit()
     {       
-        Score.Hit();        
+        //Score.Hit();        
         CreateAndPlayAnimation(hitPrefab);
         Debug.Log("OnHit called");
     }
@@ -19,14 +19,14 @@ public class AnimationController : MonoBehaviour
     {
         Debug.Log("OnHitGood called");
         CreateAndPlayAnimation(hitGoodPrefab);
-        Score.HitGood();
+        //Score.HitGood();
     }
 
     public void OnMiss()
     {
         Debug.Log("OnMiss called");
         CreateAndPlayAnimation(missPrefab);
-        Score.Miss();
+        //Score.Miss();
     }
 
     private void CreateAndPlayAnimation(GameObject prefab)
@@ -36,8 +36,10 @@ public class AnimationController : MonoBehaviour
             Debug.LogWarning("Prefab is null");
             return;
         }
-
-        GameObject animationObject = Instantiate(prefab, transform.position, Quaternion.identity);
+        
+        Vector3 prefabPosition = prefab.transform.position;
+        GameObject animationObject = Instantiate(prefab, prefabPosition, Quaternion.identity);
+        
         Debug.Log("Instantiated animation object: " + animationObject.name);
 
         Animator animator = animationObject.GetComponent<Animator>();

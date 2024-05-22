@@ -14,6 +14,7 @@ public class Lane : MonoBehaviour
     public GameObject notePrefab;
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
+    public AnimationController animationController;
 
     int spawnIndex = 0;
     int inputIndex = 0;
@@ -21,7 +22,11 @@ public class Lane : MonoBehaviour
     
     void Start()
     {
-
+        // hit, miss 애니메이션을 가져오는 코드
+        if (animationController == null)
+        {
+            animationController = GetComponent<AnimationController>();
+        }
     }
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
     {
@@ -101,13 +106,26 @@ public class Lane : MonoBehaviour
     private void Hit()
     {
         Score.Hit();
+        if (animationController != null)
+        {
+            animationController.OnHit();
+        }
     }
     private void HitGood()
     {
         Score.HitGood();
+        if(animationController != null)
+        {
+            animationController.OnHitGood();
+        }
     }
     private void Miss()
     {
         Score.Miss();
+        if (animationController != null)
+        {
+            animationController.OnMiss();
+        }
     }
+    
 }
