@@ -591,6 +591,18 @@ MonoBehaviour:
           m_StringArgument: G_your_meaning_2.mid
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1051608287}
+        m_TargetAssemblyTypeName: Sound_Speed, Assembly-CSharp
+        m_MethodName: Music_BPM
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 80
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!114 &140829532
 MonoBehaviour:
@@ -2919,6 +2931,18 @@ MonoBehaviour:
           m_StringArgument: G_addamamma.mid
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1051608287}
+        m_TargetAssemblyTypeName: Sound_Speed, Assembly-CSharp
+        m_MethodName: Music_BPM
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 146
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!114 &509572459
 MonoBehaviour:
@@ -5080,6 +5104,18 @@ MonoBehaviour:
           m_StringArgument: G_sakura_ending_2.mid
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1051608287}
+        m_TargetAssemblyTypeName: Sound_Speed, Assembly-CSharp
+        m_MethodName: Music_BPM
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 120
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!114 &1022970830
 MonoBehaviour:
@@ -5164,6 +5200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedSpeed: 0
+  selectedBPM: 0
 --- !u!1 &1068147382
 GameObject:
   m_ObjectHideFlags: 0
@@ -6638,6 +6675,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: G_addamamma.mid
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1051608287}
+        m_TargetAssemblyTypeName: Sound_Speed, Assembly-CSharp
+        m_MethodName: Music_BPM
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 146
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
@@ -8238,6 +8287,18 @@ MonoBehaviour:
           m_StringArgument: G_your_meaning_2.mid
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1051608287}
+        m_TargetAssemblyTypeName: Sound_Speed, Assembly-CSharp
+        m_MethodName: Music_BPM
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 80
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!114 &1655722711
 MonoBehaviour:
@@ -8853,6 +8914,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: G_sakura_ending_2.mid
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1051608287}
+        m_TargetAssemblyTypeName: Sound_Speed, Assembly-CSharp
+        m_MethodName: Music_BPM
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 120
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0

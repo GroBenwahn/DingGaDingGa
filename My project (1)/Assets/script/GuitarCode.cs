@@ -10,6 +10,8 @@ using Melanchall.DryWetMidi.Interaction;
 
 public class GuitarCode : MonoBehaviour
 {
+    private static readonly string SelectedBPMPref = "SelectedBPMPref";
+    private float bpm;
 
     public GuitarMidi guitarmidi;
     public static GuitarCode Instance;
@@ -30,6 +32,11 @@ public class GuitarCode : MonoBehaviour
         Debug.Log("GetDataFromGuitarCodeMidi 작동중");
         if (midiFile != null)
         {
+            var tempoMap = midiFile.GetTempoMap();
+            var tempo = tempoMap.GetTempoAtTime(new MidiTimeSpan(0));
+            bpm = PlayerPrefs.GetFloat(SelectedBPMPref); // 입력한 BPM 값 가져오기
+            Debug.Log("Guitar_MIDI BPM: " + bpm);
+
             var notes = midiFile.GetNotes();
             var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
             notes.CopyTo(array, 0);

@@ -12,6 +12,7 @@ public class GamePlay : MonoBehaviour
 {
     private static readonly string SelectedSpeedPref = "SelectedSpeedPref";
     private static readonly string SelectedClipIndexPref = "SelectedClipIndexPref";
+    private static readonly string SelectedBPMPref = "SelectedBPMPref";
 
     public Sound soundScript;
     public MidiCD midi;
@@ -21,6 +22,7 @@ public class GamePlay : MonoBehaviour
     public AudioClip[] audioClips;
     Coroutine changePitchCoroutine;
     public TMPro.TextMeshPro countdownText;
+    private float bpm;
 
     void Start()
     {
@@ -33,17 +35,20 @@ public class GamePlay : MonoBehaviour
         audioSource.clip = audioClips[selectedClipIndex];
         Debug.Log("ClipIndex = " + selectedClipIndex);
         Debug.Log("사운드 클립  작동중");
-
-        
-        
     }
 
 
     public void GetDataFromMidi(MidiFile midiFile)
     {
         Debug.Log("GetDataFromMidi 작동중");
+
         if (midiFile != null)
         {
+            var tempoMap = midiFile.GetTempoMap();
+            var tempo = tempoMap.GetTempoAtTime(new MidiTimeSpan(0));
+            bpm = PlayerPrefs.GetFloat(SelectedBPMPref); // 입력한 BPM 값 가져오기
+            Debug.Log("MIDI BPM: " + bpm);
+
             var notes = midiFile.GetNotes();
             var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
             notes.CopyTo(array, 0);
@@ -54,8 +59,8 @@ public class GamePlay : MonoBehaviour
             }
 
             Invoke(nameof(StartSong), playset.songDelayInSeconds);
-
         }
+
         else
         {
             Debug.LogError("MidiFile is null.");
