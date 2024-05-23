@@ -41,11 +41,16 @@ public class GamePlay : MonoBehaviour
     public void GetDataFromMidi(MidiFile midiFile)
     {
         Debug.Log("GetDataFromMidi 작동중");
+        
+        float originalBpm = 0f;
 
         if (midiFile != null)
         {
             var tempoMap = midiFile.GetTempoMap();
             var tempo = tempoMap.GetTempoAtTime(new MidiTimeSpan(0));
+            originalBpm = 60000000f / tempo.MicrosecondsPerQuarterNote; 
+            Debug.Log("Original MIDI BPM: " + originalBpm); // 원래 BPM 값 출력
+
             bpm = PlayerPrefs.GetFloat(SelectedBPMPref); // 입력한 BPM 값 가져오기
             Debug.Log("MIDI BPM: " + bpm);
 
@@ -71,6 +76,7 @@ public class GamePlay : MonoBehaviour
 
     public void StartSong()
     {
+
         audioSource.Play();
         float selectedSpeed = PlayerPrefs.GetFloat(SelectedSpeedPref);
         audioSource.pitch = selectedSpeed;
