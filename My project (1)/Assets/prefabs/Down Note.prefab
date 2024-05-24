@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5494363114264861773}
   - component: {fileID: 694885095704062445}
   - component: {fileID: 3069944405176673601}
-  m_Layer: 0
+  - component: {fileID: 6046838441106400846}
+  m_Layer: 3
   m_Name: Down Note
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,3 +100,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Playset: {fileID: 0}
   assignedTime: 0
+--- !u!114 &6046838441106400846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9130327093590950344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 242e0fcef731c91479d772714a78aebb, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
