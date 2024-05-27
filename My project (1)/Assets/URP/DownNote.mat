@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Note
+  m_Name: DownNote
   m_Shader: {fileID: -6465566751694194690, guid: 475e0cef2fb90ab4d8591cff2e03626a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -46,7 +46,7 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 1.8443029, g: 0, b: 0.58795136, a: 0}
+    - _Color: {r: 0.25873038, g: 0, b: 2.6082377, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2049674053478111106
 MonoBehaviour:
